@@ -18,11 +18,7 @@ export class ErreurServeurComponent implements OnInit {
 
   ngOnInit(): void {
     this.backgroundService.setNomClasseDynamique(this.customClass);
-    this.erreurService.getMessageErreur().pipe(
-      tap(data => {
-        this.messageErreur = data;
-      }), takeUntil(this.ngUnsubscribe)
-    ).subscribe()
+    this.messageErreur = this.erreurService.messageErreur;
 
   }
 
