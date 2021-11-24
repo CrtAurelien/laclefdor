@@ -1,4 +1,8 @@
-<ng-container *ngIf="requestSuccess">
+<ng-container *ngIf="displayLoader">
+  <app-loader></app-loader>
+</ng-container>
+
+<ng-container *ngIf="requestSuccess && !displayLoader">
   <div class="container d-flex flex-column align-items-center">
     <div class="content d-flex flex-column align-items-center justify-content-between">
       <div class="card">

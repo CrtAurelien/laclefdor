@@ -15,6 +15,7 @@ export class ListeChambresComponent implements OnInit {
   ngUnsubscribe = new Subject();
   showMsgNoRooms = false;
   showMsgNoRoomsCapacity = false;
+  displayLoader = false;
   constructor(private chambresService: ChambresService, private reservationService: ReservationsService) { }
 
   ngOnInit(): void {

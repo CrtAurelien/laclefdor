@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {ReservationsService} from '../services/reservations.service';
 import {Subject} from 'rxjs';
 import {Chambre} from '../../core/models/chambre';
-import {takeUntil, tap} from 'rxjs/operators';
+import {catchError, takeUntil, tap} from 'rxjs/operators';
 import {BackgroundSwitchService} from "../services/background-switch.service";
+import {Router} from "@angular/router";
+import {ErreursService} from "../services/erreurs.service";
 
 @Component({
   selector: 'app-confirmation-paypal',
@@ -27,8 +29,9 @@ export class ConfirmationPaypalComponent implements OnInit {
   nombrePetitDejeuner = 0;
   dateSelected;
   ngUnsubscribe = new Subject();
+  displayLoader = false;
   tarifTotalResa;
-  constructor(private reservationService: ReservationsService, private backgroundService:BackgroundSwitchService) { }
+  constructor(private reservationService: ReservationsService,private erreurService: ErreursService, private router: Router, private backgroundService:BackgroundSwitchService) { }
 
   ngOnInit(): void {
     this.backgroundService.setNomClasseDynamique(this.className)
@@ -38,22 +41,34 @@ export class ConfirmationPaypalComponent implements OnInit {
     this.dateSelected = this.reservationService.dateReservee;
     this.nombrePetitDejeuner = this.reservationService.nombrePetitDejVoulu;
     this.tarifTotalResa = this.reservationService.tarufTotalReservation;
-
+    this.displayLoader = true;
     this.reservationService.enregistrerReservation(this.chambre.id, this.dateSelected?.dateDebut,
       this.dateSelected?.dateFin, this.client?.firstName, this.client?.lastName, this.client?.email,
       this.client?.telephone, this.nombrePersonne, this.nombrePetitDejeuner, this.tarifTotalResa).pipe(
         tap(data => {
           this.envoiEmailConfirmation();
         }), takeUntil(this.ngUnsubscribe)
-    ).subscribe();
+    ).subscribe(_=> {},
+      error => {
+        this.displayLoader = false;
+        this.erreurService.setMessageErreur('Une erreur est survenue lors de la résevrations, mais votre paiement à été bien effectué. Veuillez-nous contacter au plus vite et nous excuser de ce problème.');
+        this.router.navigate(['erreur-serveur']);
+      });
   }
 
   envoiEmailConfirmation() {
     this.reservationService.envoiEmailConfirmation(this.client.lastName, this.client.firstName, this.client.email).pipe(
       tap(data => {
         this.requestSuccess = true;
-      }), takeUntil(this.ngUnsubscribe)
-    ).subscribe()
+        this.displayLoader = false
+      },
+    ), takeUntil(this.ngUnsubscribe)
+    ).subscribe(_=> {},
+      error => {
+      this.displayLoader = false;
+      this.erreurService.setMessageErreur("Une erreur est survenue lors de l'envoi de votre e-mail de confirmation. Veuillez nous contacter pour confirmer la réservation. Mais n'ayez crainte, votre réservation est déjà bien prise en compte !");
+      this.router.navigate(['erreur-serveur']);
+    })
   }
 
 

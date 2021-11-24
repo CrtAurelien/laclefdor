@@ -30,6 +30,8 @@ import {DatePipe, HashLocationStrategy, LocationStrategy, PathLocationStrategy} 
 import { EchecPaypalComponent } from './shared/echec-paypal/echec-paypal.component';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 import {NgsRevealModule} from 'ngx-scrollreveal';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { ErreurServeurComponent } from './erreur-serveur/erreur-serveur.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import {NgsRevealModule} from 'ngx-scrollreveal';
     Page404Component,
     ConfirmationPaypalComponent,
     EchecPaypalComponent,
-    MentionsLegalesComponent
+    MentionsLegalesComponent,
+    LoaderComponent,
+    ErreurServeurComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import {EchecPaypalComponent} from "./shared/echec-paypal/echec-paypal.component
 import {FormulaireGuard} from "./hebergement/formulaire-reservation/formulaire.guard";
 import {ReservationGuard} from "./shared/confirmation-paypal/confirmation.guard";
 import {MentionsLegalesComponent} from './mentions-legales/mentions-legales.component';
+import {ErreurServeurComponent} from "./erreur-serveur/erreur-serveur.component";
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'mentions-legales', component: MentionsLegalesComponent},
       { path: 'confirmation-reservation', component: ConfirmationPaypalComponent, canActivate: [ReservationGuard]},
       { path: 'erreur-technique', component: EchecPaypalComponent},
+      { path: 'erreur-serveur', component: ErreurServeurComponent},
       { path: '**', redirectTo: '/404'}
     ]
   }
