@@ -1,0 +1,122 @@
+@import "src/variables";
+
+.container-fluid {
+  padding-right: 55px;
+  padding-left: 55px;
+  margin-top: 100px;
+  @media screen and(max-width: $breakpoint-tablet){
+    padding-left: 45px;
+    padding-right: 45px;
+    .right{
+      max-width: 100% !important;
+    }
+  }
+  .right {
+    max-width: 50%;
+    margin-top: 20px;
+  }
+
+  .img-burger, .img-macarons {
+    display: none;
+    @media screen and(min-width: $breakpoint-desktop) {
+      display: block;
+      width: 350px;
+    }
+  }
+
+
+  .title {
+    font-family: $titleFont;
+    font-size: 65px;
+    color: white;
+    line-height: 20px;
+
+    @media screen and(min-width: $breakpoint-tablet) {
+      letter-spacing: 20px;
+      padding-left: 10px;
+    }
+    @media screen and(min-width: $breakpoint-large-desktop) {
+      letter-spacing: 20px;
+      font-size: 130px;
+      text-align: left;
+      line-height: 70px;
+    }
+  }
+
+  .subtitle {
+    font-family: $titleFont;
+    font-size: 73px;
+    color: #f9c600;
+    @media screen and(min-width: $breakpoint-tablet) {
+      letter-spacing: 15px;
+      font-size: 200px;
+      text-align: left;
+    }
+    @media screen and(min-width: $breakpoint-large-desktop) {
+      letter-spacing: 15px;
+      font-size: 230px;
+      text-align: left;
+    }
+  }
+
+  .text {
+    color: white;
+    max-width: 810px;
+    font-size: 16px;
+    font-family: $textFont;
+    padding-left: 5px;
+    @media screen and(max-width: $breakpoint-tablet) {
+      font-size: 15px;
+    }
+  }
+
+  .first-section {
+    margin-bottom: 150px;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .second-section {
+    padding-bottom: 50px;
+    flex-wrap: nowrap;
+    align-items: center;
+    .img-macarons{
+      width: 400px;
+    }
+    .title {
+      letter-spacing: 15px;
+      color: #f9c600;
+      line-height: 70px;
+      @media screen and(max-width: $breakpoint-tablet) {
+        letter-spacing: 0;
+        text-align: left;
+        line-height: 20px;
+      }
+    }
+
+    .subtitle {
+      color: white;
+      letter-spacing: inherit;
+    }
+
+    .text {
+      margin-left: 10px;
+      @media screen and(max-width: $breakpoint-tablet) {
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: $breakpoint-tablet) {
+  .container-fluid {
+    margin-top: 50px;
+  }
+  .container-fluid .first-section {
+    margin-bottom: 50px
+  }
+  .mr-auto.ml-5, .mr-auto.right {
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+}

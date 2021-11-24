@@ -1,0 +1,149 @@
+<div class="container-fluid" *ngIf="!!chambreReservee">
+  <div class="wrapper">
+    <!-- Placer titre page ici -->
+    <div class="wrap">
+      <div class="form d-flex align-items-center justify-content-center">
+        <div class="chambre">
+          <div class="mr-auto ml-5">
+            <app-chambre [chambre]="chambreReservee" typeTemplate="resa"></app-chambre>
+          </div>
+        </div>
+        <div class="formulaire">
+          <form [formGroup]="identite" *ngIf="!showPaypalBtn">
+            <div class="recap">
+            <span>Vous souhaitez réserver votre séjour du <b>{{dateReservations.dateDebut | date: 'dd/MM/yyyy'}}</b>
+              au <b>{{dateReservations.dateFin | date: 'dd/MM/yyyy'}}</b> pour <b>{{nombrePersonneReservation}}
+                personne(s)</b></span>
+            </div>
+            <div class="identite d-flex justify-content-start">
+              <div class="form-group {{hasError && !identite.controls['nom'].valid ? 'invalid' : ''}}">
+                <label for="nom">Nom :</label>
+                <input type="text" class="form-control" [formControl]="identite.controls['nom']" id="nom"
+                       aria-describedby="emailHelp" placeholder="Entrez votre nom">
+              </div>
+              <div class="form-group {{hasError && !identite.controls['prenom'].valid ? 'invalid' : ''}}">
+                <label for="prenom">Prénom :</label>
+                <input type="text" class="form-control" [formControl]="identite.controls['prenom']" id="prenom"
+                       aria-describedby="emailHelp" placeholder="Entrez votre prénom">
+              </div>
+            </div>
+            <div class="form-content">
+              <div class="form-group {{hasError && !identite.controls['email'].valid ? 'invalid' : ''}}">
+                <label for="email">Email : </label>
+                <input type="email" class="form-control" email="true" [formControl]="identite.controls['email']"
+                       id="email" aria-describedby="emailHelp" placeholder="Entrez votre email">
+                <small class="form-text text-muted">Nous ne partagerons pas votre adresse email</small>
+                <small *ngIf="hasError && !identite.controls['email'].valid" class="form-text text-danger">Veuillez
+                  entrer un email valide</small>
+              </div>
+              <div class="form-group {{hasError && !identite.controls['telephone'].valid ? 'invalid' : ''}}">
+                <label for="tel">Téléphone :</label>
+                <input type="text" class="form-control" [formControl]="identite.controls['telephone']" id="tel"
+                       aria-describedby="emailHelp" placeholder="Entrez votre numéro de portable">
+                <small *ngIf="hasError && !identite.controls['telephone'].valid" class="form-text text-danger">Veuillez
+                  entrer un numéro de téléphone valide</small>
+                <small class="form-text text-muted">Nous ne partagerons pas votre numéro de téléphone</small>
+              </div>
+              <div
+                class="form-check petitDej {{hasError && !identite.controls['petitDejeuner'].valid ? 'invalid' : ''}}">
+                <input type="checkbox" [formControl]="identite.controls['petitDejeuner']" class="form-check-input">
+                <label class="form-check-label">Je craque pour le petit déjeuner (6€/personne,
+                  soit {{6 * nombrePersonneReservation}}€ pour votre réservation)</label>
+              </div>
+              <div *ngIf="showInputPetitDej"
+                   class="form-group {{hasError && !identite.controls['nombrePetitDejeuner'].valid ? 'invalid' : ''}}">
+                <label for="tel">Pour combien de jour souhaitez vous avoir le petit déjeuner ? (comprend
+                  les {{nombrePersonneReservation}} personnes) </label>
+                <input type="number" value="1" min="1" [max]="this.nombreNuit.length- 1" class="form-control"
+                       [formControl]="identite.controls['nombrePetitDejeuner']" id="nbDej"
+                       (blur)="controlNombrePetitDejeuner($event)"
+                       placeholder="Entrez le nombre de petit dejeuner désiré">
+                <small *ngIf="showMsgErreurNombrePetitDej" class="form-text text-danger">Vous ne pouvez pas demander un
+                  nombre de petit dejeuner superieur au nombre de nuit.</small>
+              </div>
+            </div>
+            <div class="tarif">
+              <span class="title-tarif">Récapitulatif de votre réservation</span>
+              <div class="d-flex flex-column">
+                <div class="tarif-ligne d-flex justify-content-between align-items-center">
+                  <span><b>Tarif de base :</b></span>
+                  <span class="value">50€ pour 1 ou 2 personnes par nuit, puis 6€ par personne supplémentaire</span>
+                </div>
+                <div *ngIf="identite.controls['petitDejeuner'].value"
+                     class="tarif-ligne d-flex justify-content-between align-items-center">
+                  <span><b>Petit-déjeuner :</b></span>
+                  <span>6 euros par personne, soit {{tarifTotalPetitDej}}€ pour votre réservation</span>
+                </div>
+                <div class="tarif-ligne d-flex justify-content-between align-items-center">
+                  <span><b>Taxe de séjour :</b></span>
+                  <span>0.70€ par personne et par nuit</span>
+                </div>
+                <div class="tarif-ligne d-flex justify-content-between align-items-center">
+                  <span><b>Tarif total :</b></span>
+                  <span>{{tarifTotal}}€ pour {{nombreNuit.length - 1}} nuit(s) pour <b>{{nombrePersonneReservation}}
+                    personne(s)</b></span>
+                </div>
+              </div>
+            </div>
+            <div class="form-footer">
+              <div class="form-check {{hasError && !identite.controls['condition'].valid ? 'invalid' : ''}}">
+                <input type="checkbox" [formControl]="identite.controls['condition']" class="form-check-input"
+                       id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">En cliquant sur Continuer, vous acceptez les <a
+                  href="CGV.pdf" download>Conditions Générales de Vente</a></label>
+                <small *ngIf="hasError && !identite.controls['condition'].valid" class="form-text text-danger">Veuillez
+                  accepter les CGV.</small>
+              </div>
+
+              <div class="btn-wrapper">
+                <button type="submit" (click)="reserverChambre()" class="btn btn-primary">Continuer</button>
+              </div>
+            </div>
+          </form>
+          <div class="paypalBtn flex-column animate__animated animate__fadeInUp" *ngIf="showPaypalBtn">
+            <div class="paypal-header">
+              <h3 class="title-tarif">Récapitulatif de votre réservation </h3>
+              <div class="tarif">
+                <div class="d-flex flex-column">
+                  <div class="tarif-ligne d-flex justify-content-between align-items-center">
+                    <span><b>Tarif de base :</b></span>
+                    <span
+                      class="value">50€ pour 1 ou 2 personnes par nuit, puis 6€ en plus par personne supplémentaire</span>
+                  </div>
+                  <div class="tarif-ligne d-flex justify-content-between align-items-center">
+                    <span><b>Date de séjour :</b></span>
+                    <span>Du {{dateReservations.dateDebut | date: 'dd/MM/yyyy'}}
+                      au {{dateReservations.dateFin | date: 'dd/MM/yyyy'}}</span>
+                  </div>
+                  <div class="tarif-ligne d-flex justify-content-between align-items-center">
+                    <span><b>Nombre de personne :</b></span>
+                    <span>{{nombrePersonneReservation}} personne(s)</span>
+                  </div>
+                  <div *ngIf="identite.controls['petitDejeuner'].value"
+                       class="tarif-ligne d-flex justify-content-between align-items-center">
+                    <span><b>Petit-déjeuner :</b></span>
+                    <span>6 euros par personne, soit {{tarifTotalPetitDej}}€</span>
+                  </div>
+                  <div class="tarif-ligne d-flex justify-content-between align-items-center">
+                    <span><b>Taxe de séjour :</b></span>
+                    <span>0.70€ par personne et par nuit</span>
+                  </div>
+                  <div class="tarif-ligne d-flex justify-content-between align-items-center">
+                    <span><b>Tarif total :</b></span>
+                    <span>{{tarifTotal}}€  pour {{nombreNuit.length - 1}}
+                      nuit(s) pour <b>{{nombrePersonneReservation}} personne(s)</b></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>
+

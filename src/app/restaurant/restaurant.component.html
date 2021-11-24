@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row first-section">
+    <div class="mx-auto animate__animated animate__slideInLeft animate__slow">
+      <img src="assets/images/burger.png" alt=""  class="img-burger">
+    </div>
+    <div class="mx-auto animate__animated animate__slideInRight animate__slow">
+      <div [ngsReveal]="{ reset: true}">
+        <h2 class="title">Venez vous</h2>
+        <h2 class="subtitle">Restaurer</h2>
+      </div>
+
+      <p class="text ml-auto" [ngsReveal]="{ reset: true}">Des <b>tapas et planches</b> vous sont proposées aussi bien en <b>apéritif</b> que pour
+        déguster sur le pouce.
+        <b>Charcuteries, fromages</b> mais aussi des <b>amuses-bouches
+          salés ou sucrés</b> raviront vos papilles avec un clin d'œil <b>local.</b>
+      </p>
+      <p class="text ml-auto" [ngsReveal]="{ reset: true}">
+        <i><b>Dès le 15 mars 2022,</b></i> nous vous accueillerons pour le déjeuner et le dîner avec un menu du jour et
+        une <b>carte adaptée en fonction des saisons.</b>
+      </p>
+      <p class="text ml-auto">
+        <b>Privatisez la salle de restaurant</b> pour vos événements :
+        apéro/cocktails dînatoires, repas d'entreprise, événements familiaux ...
+      </p>
+    </div>
+  </div>
+  <div class="row second-section" >
+    <div class="mx-auto animate__animated animate__slideInLeft animate__slow">
+      <div [ngsReveal]="{ reset: true}">
+        <h2 class="title" >Goutez nos</h2>
+        <h2 class="subtitle" id="sectionPatisserie">patisseries</h2>
+      </div>
+
+      <p class="text mb-4 mr-auto" [ngsReveal]="{ reset: true}">
+        Pour <b>petits et grands événements</b> ou seulement pour le plaisir,
+        nous réalisons des <b>pâtisseries sur commande.</b>
+      </p>
+      <p class="text mb-4 mr-auto" [ngsReveal]="{ reset: true}">
+        Selon vos goûts, le thème choisi et le type d'évènement, nous travaillons
+        avec des <b>produits de saison</b> et du <b>"fait main"</b> qui vous offriront
+        des créations uniques, classiques et/ou revisitées.
+      </p>
+      <p class="text mr-auto" [ngsReveal]="{ reset: true}">
+        <b>La prise de commande s'effectue au minimum 48h à l'avance.</b>
+        <br>
+        <b>Le petit plus ?</b> Une carte de fidélité vous est mise à disposition <b>dès la première commande.</b>
+      </p>
+    </div>
+    <div class="mx-auto ml-5 animate__animated animate__slideInLeft animate__slow">
+      <img src="assets/images/macarons.png" alt="" width="" class="img-macarons">
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

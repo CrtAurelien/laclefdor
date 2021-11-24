@@ -1,0 +1,69 @@
+@import "src/variables";
+
+.navbar, .navbar-nav{
+  padding: 10px 15px;
+  margin: 0 -15px;
+  li{
+    margin: 0 15px;
+  }
+  .logo{
+    max-width: 330px;
+    @media screen and (max-width: $breakpoint-tablet) {
+      max-width: 200px;
+      line-height: 0;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  a{
+    font-family: $menuFont;
+    color: white;
+    letter-spacing: 2px;
+    &:hover{
+      color: #b49571;
+      svg {
+        fill:  #b49571;;
+      }
+    }
+  }
+}
+.nav-link.active,.nav-link:focus{
+  color: #b49571 !important;
+}
+
+
+.default-theme {
+  background: transparent;
+  transition-duration: 500ms;
+}
+
+.scroll-theme {
+  background: #302224;
+}
+
+:host-context(.green) {
+  .scroll-theme{
+    background: #25242a;
+    transition-duration: 500ms;
+  }
+  a{
+    &:hover{
+      color: #f9c600;
+      svg {
+        fill:  #f9c600;;
+      }
+    }
+  }
+  .nav-link.active,.nav-link:focus{
+    color: #f9c600 !important;
+  }
+}
+
+:host-context(.deepblue) {
+  .scroll-theme{
+    background: #1e2734;
+    transition-duration: 500ms;
+  }
+}
+

@@ -1,0 +1,45 @@
+::ng-deep.ng-tns-c78-0.ng-star-inserted{
+  color: white;
+  font-size: large;
+  font-family: "Ubuntu Light", serif;
+  font-style: italic;
+}
+
+
+mat-form-field {
+  width: 100%;
+  ::ng-deep mat-label {
+    color:white;
+  }
+  ::ng-deep input {
+    color:white;
+  }
+  ::ng-deep mat-datepicker-toggle {
+    button {
+      color:white;
+      outline: inherit !important;
+    }
+  }
+}
+
+
+mat-form-field {
+  width: 100%;
+  ::ng-deep .mat-form-field-label {
+    color:white;
+  }
+
+
+  ::ng-deep .mat-button-wrapper,
+  ::ng-deep .mat-date-range-input-start-wrapper,
+  ::ng-deep .mat-date-range-input-end-wrapper,
+  ::ng-deep .mat-date-range-input-separator {
+    color:white;
+  }
+
+
+}
+
+.dateCustom {
+  background: #bfa078 !important;
+}

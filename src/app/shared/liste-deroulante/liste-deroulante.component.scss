@@ -1,0 +1,29 @@
+@import "src/variables";
+
+mat-form-field {
+  width: 100%;
+  @media screen and(min-width: $breakpoint-tablet) {
+    width: 265px;
+  }
+  ::ng-deep .mat-form-field-infix {
+    border:0;
+
+  }
+  ::ng-deep .mat-select-placeholder {
+    color:white;
+  }
+  ::ng-deep .mat-select-arrow-wrapper {
+    position: relative;
+    top: 8px;
+  }
+
+  ::ng-deep .mat-select-arrow {
+    color:white;
+  }
+
+  ::ng-deep .mat-select-value-text {
+    span {
+      color:white;
+    }
+  }
+}

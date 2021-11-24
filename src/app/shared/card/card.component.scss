@@ -1,0 +1,119 @@
+@import "../../../variables.scss";
+.card-selected{
+  box-shadow: inset 0px 4px 13px 5px #7e7979;
+}
+.card.card-cascade.narrower {
+  margin: 30px 20px;
+  width: 400px;
+  display: flex;
+  border-radius: 1.25rem;
+  background-color: #f3f3f3;
+  @media screen and (max-width: $breakpoint-tablet){
+    margin: 30px 0;
+  }
+}
+.card-img-top {
+  width: 100%;
+  border-radius: 1.25rem;
+}
+.card.card-cascade.narrower .view.view-cascade {
+  margin-top: -1.25rem;
+  margin-right: 4%;
+  margin-left: 4%;
+  border-radius: 1.25rem;
+  -webkit-box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+  box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+}
+.title-card{
+  font-family: $titleFont;
+  text-align: center;
+  font-size: 55px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #4e2228;
+}
+.card-text{
+  margin: 30px 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @media screen and (max-width: $breakpoint-tablet){
+    flex-direction: column;
+  }
+}
+/* ICONS */
+.fa-person{
+  font-size: 25px;
+  padding: 10px 10px 10px 0;
+}
+.fa-wifi{
+  font-size: 15px;
+  padding: 10px 10px 10px 0;
+}
+.fa-tv{
+  font-size: 17px;
+  padding: 10px 10px 10px 0;
+}
+.fa-person-biking{
+  font-size: 17px;
+  padding: 10px 10px 10px 0;
+}
+.fa-shower{
+  font-size: 22px;
+  padding: 10px 10px 10px 0;
+}
+.fa-utensils{
+  font-size: 19px;
+  padding: 10px 15px 10px 0;
+}
+.option{
+  font-size: 15px;
+}
+li.card-details {
+  font-family: $textFont;
+  color: #4f2228;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  @media screen and(max-width: $breakpoint-tablet) {
+    justify-content: space-between;
+    text-align: right;
+  }
+}
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+
+  span {
+    text-align: center;
+  }
+
+  .start-to {
+    font-size: 19px;
+    font-family: $textFontMedium;
+    color: #4d2b30;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .rate-number {
+    font-size: 65px;
+    font-family: $textFontMedium;
+    color: #4d2b30;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 60px;
+  }
+
+  .person-number {
+    font-size: 11px;
+    font-family: $textFontMedium;
+    color: #4d2b30;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}

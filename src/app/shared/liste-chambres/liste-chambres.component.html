@@ -1,0 +1,7 @@
+<ng-container *ngFor="let chambre of listeChambres">
+  <app-chambre [chambre]="chambre" typeTemplate="hebergement"></app-chambre>
+</ng-container>
+
+<div *ngIf="showMsgNoRooms && !showMsgNoRoomsCapacity">Aucune chambre pour les dates sélectionnées</div>
+<div *ngIf="showMsgNoRoomsCapacity && !showMsgNoRooms">Aucune chambre pour le nombre de personnes sélectionné</div>
+<div *ngIf="showMsgNoRoomsCapacity && showMsgNoRooms">Aucune chambre pour les dates sélectionnées ne dispose du nombre de personnes désiré</div>

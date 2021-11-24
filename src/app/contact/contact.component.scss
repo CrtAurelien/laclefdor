@@ -1,0 +1,116 @@
+@import "src/variables";
+
+.container-fluid {
+  padding-right: 55px;
+  padding-left: 55px;
+  margin-top: 200px;
+  @media screen and(max-width: $breakpoint-desktop) {
+    margin-top: 70px;
+  }
+
+  .right {
+    max-width: 50%;
+    margin-top: 20px;
+  }
+
+  .title {
+    font-family: $titleFont;
+    font-size: 180px;
+    color: #fff;
+    line-height: 100px;
+    @media screen and(max-width: $breakpoint-desktop) {
+      font-size: 80px;
+      line-height: 70px;
+    }
+
+    span {
+      color: #a6b3c7;
+    }
+  }
+
+  .text {
+    color: white;
+    max-width: 810px;
+    font-size: 19px;
+    font-family: $textFont;
+    @media screen and(max-width: $breakpoint-desktop) {
+      font-size: 15px;
+    }
+  }
+
+  .texts {
+    display: flex;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    @media screen and(max-width: $breakpoint-desktop) {
+      padding: 0;
+      flex-direction: column;
+      margin: 30px 0;
+    }
+  }
+
+  .first-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+}
+
+.map-infos {
+  display: flex;
+  align-items: center;
+  max-width: 1360px;
+  @media screen and(max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    .map {
+      margin: 0;
+    }
+  }
+}
+
+.map {
+  margin-right: 50px;
+  @media screen and(max-width: $breakpoint-desktop) {
+    img {
+      width: 250px;
+    }
+  }
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  @media screen and(max-width: $breakpoint-desktop) {
+    margin:0;
+    min-width: 250px;
+    margin-top: 10px;
+  }
+
+  span {
+    font-family: $textFont;
+    color: white;
+    font-size: 22px;
+    @media screen and(max-width: $breakpoint-desktop) {
+      font-size: 15px;
+    }
+  }
+}
+
+.btn-contact {
+  background: white;
+  padding: 10px 15px;
+  width: 400px;
+  border-radius: 50px;
+  font-family: $textFont;
+  font-size: 19px;
+  color: #313d50;
+  margin-top: 40px;
+  @media screen and(max-width: $breakpoint-desktop) {
+    width: auto;
+    font-size: 15px;
+  }
+  &:hover {
+    color: #b49571;
+  }
+}

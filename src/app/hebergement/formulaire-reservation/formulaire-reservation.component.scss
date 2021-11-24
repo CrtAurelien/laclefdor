@@ -1,0 +1,253 @@
+@import "src/variables";
+
+.paypalBtn {
+  background: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 1.25rem;
+  ngx-paypal {
+    width: 100%;
+    ::ng-deep div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.formulaire {
+  overflow: hidden;
+}
+
+.container-fluid {
+  padding: 10px;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin-top: 30px;
+  }
+  @media screen and(min-width: $breakpoint-tablet) {
+    padding-right: 55px;
+    padding-left: 55px;
+  }
+  @media screen and(min-width: $breakpoint-large-desktop) {
+    padding: 0 200px;
+  }
+  .right{
+    max-width: 50%;
+    margin-top: 50px;
+    @media screen and (max-width: $breakpoint-tablet){
+      max-width: 100%;
+    }
+  }
+
+.wrapper {
+  width: 100%;
+  .wrap {
+    background:transparent;
+    color:white;
+    @media screen and(min-width: $breakpoint-tablet) {
+      padding: 10px;
+    }
+    .form {
+      color:black;
+      background: transparent;
+      flex-direction: column;
+      @media screen and(min-width: $breakpoint-tablet) {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+  .title{
+    font-family: $titleFont;
+    font-size: 50px;
+    color: #bfa078;
+    letter-spacing: 0;
+    line-height: 10px;
+    @media screen and (min-width: $breakpoint-tablet) {
+      line-height: 100px;
+      letter-spacing: 21px;
+      font-size: 100px;
+    }
+    @media screen and (min-width: $breakpoint-large-desktop) {
+      line-height: 150px;
+      letter-spacing: 41px;
+      font-size: 170px;
+
+    }
+  }
+  .subtitle{
+    font-family: $titleFont;
+    font-size: 50px;
+    color: #fff;
+    letter-spacing: 0;
+    @media screen and (min-width: $breakpoint-tablet) {
+      letter-spacing: 10px;
+      font-size: 100px;
+    }
+    @media screen and (min-width: $breakpoint-large-desktop) {
+      letter-spacing: 15px;
+      font-size: 150px;
+    }
+  }
+  .text{
+    color: white;
+    max-width: 740px;
+    font-size: 19px;
+    font-family: $textFont;
+  }
+  .first-section{
+    margin-bottom: 150px;
+    .container-fluid{
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+}
+
+.form {
+  background: white;
+}
+
+.mr-auto.ml-5{
+  margin: 0 !important;
+  img{
+    @media screen and (max-width: $breakpoint-tablet){
+      display: none;
+    }
+  }
+}
+
+.form-group, .form-check {
+  &.invalid {
+    input {
+      border: 1px solid red;
+    }
+  }
+}
+
+.formulaire {
+  background: white;
+  border-radius: 1.25rem;
+  .recap {
+    background: #bfa078;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    color:white;
+  }
+
+  .identite {
+    .form-group {
+      margin: 10px 20px 0;
+      width: 100%;
+      label {
+        margin: 0;
+      }
+  }
+}
+  .form-content {
+    padding: 0 20px;
+    .form-group {
+      margin: 10px 0 0;
+      label {
+        margin: 0;
+      }
+    }
+
+  }
+  .form-footer {
+    padding: 0 20px 20px;
+    .info {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 16px;
+        font-style: italic;
+      }
+    }
+    .btn-wrapper {
+      padding-top: 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .btn {
+
+      }
+    }
+  }
+
+  .paypal-header{
+    .title-tarif{
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .tarif {
+    margin: 20px;
+    border: 2px dotted #bfa078;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .title-tarif {
+      font-weight: bold;
+      padding: 0 0 20px;
+    }
+  }
+
+  .tarif-ligne {
+    .value {
+      max-width: 50%;
+      text-align: right;
+    }
+  }
+
+  .tarif-ligne + .tarif-ligne {
+    margin-top: 20px;
+  }
+
+  .petitDej {
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  border-radius: 10rem;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+  z-index: 1;
+  font-family: $menuFont;
+  border: 0;
+  background-color: #7c735d;
+}
+
+.form-control {
+  border-radius: 20px;
+  margin: 10px 0 5px 0;
+  border-color: #bfa078;
+  font-style: italic;
+  font-family: $textFont;
+}
+
+

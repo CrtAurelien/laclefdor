@@ -1,0 +1,244 @@
+@import "src/variables";
+.left-image{
+  @media screen and(min-width: $breakpoint-large-desktop) {
+    img{
+      width: 90% !important;
+    }
+  }
+}
+
+.row {
+  @media screen and(min-width: $breakpoint-big-tablet) {
+    flex-wrap: nowrap;
+  }
+}
+
+
+.homepage{
+  background: #1e2734;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-wrap: nowrap;
+  img {
+    width: 300px;
+  }
+  @media screen and(min-width: $breakpoint-tablet) {
+    padding: 0;
+    margin-top: 0;
+    img {
+      width: 500px;
+    }
+  }
+  @media screen and(min-width: $breakpoint-desktop) {
+    img {
+      width: 600px;
+    }
+  }
+  .right{
+    max-width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 80px;
+    @media screen and(max-width: $breakpoint-big-tablet) {
+      max-width: 100%;
+      margin: 0 auto !important;
+      padding-right: 35px;
+      padding-left: 35px;
+    }
+  }
+  .title{
+    font-family: $titleFont;
+    font-size: 18vw;
+    color: white;
+    @media screen and (max-width: $breakpoint-tablet){
+      text-align: left;
+    }
+    @media screen and(min-width: $breakpoint-tablet) {
+      font-size: 15vw;
+    }
+    @media screen and(min-width: $breakpoint-large-desktop) {
+      font-size: 15vw;
+    }
+  }
+  .text {
+    color: white;
+    max-width: 770px;
+    font-size: 16px;
+    font-family: $textFont;
+    @media screen and(min-width: $breakpoint-tablet) {
+      font-size: 16px;
+      text-align: center;
+    }
+    @media screen and(min-width: $breakpoint-big-tablet) {
+      padding: 10px 80px 10px 20px;
+      text-align: left;
+    }
+  }
+
+  .wrapper-btn {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    justify-content: center;
+    @media screen and (max-width: $breakpoint-tablet) {
+      width: auto;
+      margin: auto;
+    }
+    .btn {
+      width: 100%;
+      font-size:12px;
+      @media screen and (max-width: $breakpoint-tablet) {
+        width: 90%;
+      }
+    }
+    .btn + .btn {
+      margin-top: 20px;
+    }
+    @media screen and(min-width: $breakpoint-tablet) {
+      padding: 20px 10px 40px 20px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: row;
+      .btn {
+        font-size:1rem;
+        padding: 15px 50px;
+        width: inherit;
+        margin: 0;
+      }
+      .btn + .btn {
+        margin-left: 20px;
+        margin-top: 0;
+        padding: 15px 50px;
+      }
+    }
+    @media screen and(min-width: $breakpoint-big-tablet) {
+      justify-content: flex-start;
+    }
+
+  }
+
+
+  .btn-home-left{
+    display: inline-block;
+    padding: 0.75rem 2.25rem 0.85rem 2.25rem;
+    border-radius: 10rem;
+    color: #78612f;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-family: $menuFont;
+    border: 0;
+    @media screen and(max-width: $breakpoint-tablet) {
+      margin: 40px 0 0 0;
+      width: 100%;
+      font-size: 4vw;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: #7c735d;
+      transition: all .3s;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+  .btn-home-right{
+    display: inline-block;
+    padding: 0.75rem 2.25rem 0.85rem 2.25rem;
+    border-radius: 10rem;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-family: $menuFont;
+    border: 0;
+    @media screen and(max-width: $breakpoint-tablet) {
+      padding: 15px 5px;
+      margin: 20px 0 40px 0;
+      width: 100%;
+      font-size: 4vw;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #7c735d;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: #fff;
+      transition: all .3s;
+      z-index: -1;
+    }
+    &:hover {
+      color: #7c735d;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+.title-mobile {
+  display: block;
+  text-align: center !important;
+  width: 100%;
+  margin-top: 300px !important;
+  @media screen and(min-width: $breakpoint-middle-mobile) {
+    margin-top: 200px !important;
+  }
+  @media screen and(min-width: $breakpoint-tablet) {
+    margin-top: 0 !important;
+  }
+  @media screen and(min-width: $breakpoint-big-tablet) {
+    display: none;
+  }
+}
+.title-desktop {
+  display: none;
+  @media screen and(min-width: $breakpoint-big-tablet) {
+    display: block;
+  }
+}

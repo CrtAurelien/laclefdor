@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row first-section">
+    <div class="mr-auto ml-5 animate__animated animate__rotateInDownLeft  animate__slow">
+      <img src="assets/images/coffee-cup.png" alt="image tasse de café"  width="580" class="imgCafe">
+    </div>
+    <div class="mx-auto right animate__animated  animate__zoomIn animate__slow">
+      <h2 class="title" [ngsReveal]="{ reset: true}">Réservez</h2>
+      <h2 class="subtitle" [ngsReveal]="{ reset: true}">votre séjour</h2>
+      <p class="text ml-auto" [ngsReveal]="{ reset: true}">
+        Toute l'année, nous vous proposons <b>5 chambres d'hôtes</b> dont quatres donnant <b>vue sur la Loire.</b>
+        <br>Chacune possède un couchage <b>lit double</b> dont une avec un <b>lit simple</b> en plus.
+        <br>Venez découvrir les merveilles de la région, <b>nous vous accueillons avec plaisir !</b>
+      </p>
+    </div>
+    <div class="container reservation-form">
+      <div class="d-flex flex-column wrap-head">
+        <div class="d-flex date" [ngsReveal]="{ reset: true}">
+          <h2 class="title-date">Date de votre séjour</h2>
+          <div class="datepicker">
+            <app-date-picker></app-date-picker>
+          </div>
+        </div>
+        <div class="d-flex listeNombrePersonne" [ngsReveal]="{ reset: true}">
+          <h2 class="title-date" >Nombre de personne</h2>
+          <div class="datepicker listePersonne d-flex align-items-center justify-content-center">
+            <app-liste-deroulante></app-liste-deroulante>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container chambers" [ngsReveal]="{ reset: true}">
+      <h2 class="title-date">Choix de la chambre</h2>
+    </div>
+    <div class="container-fluid">
+      <div>
+          <app-liste-chambres  class="list-chambers"></app-liste-chambres>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

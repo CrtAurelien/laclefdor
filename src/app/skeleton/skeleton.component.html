@@ -1,0 +1,7 @@
+<ng-container *ngIf="classDynamic">
+  <div class="container-fluid {{ classDynamic }}" >
+    <app-header></app-header>
+    <router-outlet #outlet='outlet'></router-outlet>
+  </div>
+</ng-container>
+

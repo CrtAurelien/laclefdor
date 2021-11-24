@@ -1,0 +1,250 @@
+@import "../../../variables.scss";
+
+.card.card-cascade.narrower {
+  display: flex;
+  border-radius: 1.25rem;
+  background-color: #f3f3f3;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  @media screen and (max-width: $breakpoint-tablet){
+    margin: 30px 0;
+  }
+  @media screen and (min-width: $breakpoint-tablet){
+    margin: 30px 20px;
+    width: 400px;
+  }
+}
+.card-img-top {
+  width: 100%;
+  border-radius: 1.25rem;
+}
+.card.card-cascade.narrower .view.view-cascade {
+  margin-top: -1.25rem;
+  margin-right: 4%;
+  margin-left: 4%;
+  border-radius: 1.25rem;
+  -webkit-box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+  box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+}
+.title-card{
+  font-family: $titleFont;
+  text-align: center;
+  font-size: 55px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #4e2228;
+}
+.card-text{
+  margin: 30px 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @media screen and (max-width: $breakpoint-tablet){
+    flex-direction: column;
+  }
+}
+/* ICONS */
+.fa-person{
+  font-size: 25px;
+  padding: 10px 10px 10px 0;
+}
+.fa-wifi{
+  font-size: 15px;
+  padding: 10px 10px 10px 0;
+}
+.fa-tv{
+  font-size: 17px;
+  padding: 10px 10px 10px 0;
+}
+.fa-person-biking{
+  font-size: 17px;
+  padding: 10px 10px 10px 0;
+}
+.fa-shower{
+  font-size: 22px;
+  padding: 10px 10px 10px 0;
+}
+.fa-utensils{
+  font-size: 19px;
+  padding: 10px 15px 10px 0;
+}
+.option{
+  font-size: 15px;
+}
+.shower {
+  width: 98px;
+}
+li.card-details {
+  font-family: $textFont;
+  color: #4f2228;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  @media screen and(max-width: $breakpoint-tablet) {
+    justify-content: space-between;
+    width: 100%;
+    text-align: right;
+  }
+}
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+
+  span {
+    text-align: center;
+  }
+
+  .start-to {
+    font-size: 19px;
+    font-family: $textFontMedium;
+    color: #4d2b30;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .rate-number {
+    font-size: 65px;
+    font-family: $textFontMedium;
+    color: #4d2b30;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 60px;
+  }
+
+  .person-number {
+    font-size: 11px;
+    font-family: $textFontMedium;
+    color: #4d2b30;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  button {
+    background: #bfa078;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    width: 60%;
+    height: 50px;
+    text-transform: uppercase;
+    &:hover {
+      background: white;
+      border: 1px solid #bfa078;
+      color:#bfa078;
+    }
+  }
+}
+
+.msg-error {
+  padding: 10px 20px;
+  width: 100%;
+  text-align: center;
+  color: yellow;;
+}
+
+
+.modal-header {
+  background: #4d2b30;
+  text-align: center;
+  font-family: $titleFont;
+  color:white;
+  border-radius: 0;
+  h4 {
+    font-size: 40px;
+    text-align: center;
+  }
+}
+
+
+.img-modal {
+  width: 50%;
+  border-radius: 0;
+}
+
+
+.wrapper-resa-chambre {
+  background: white;
+  .img {
+    width: 300px;
+  }
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  .btn-default {
+    background:#4d2b30;
+    color:white;
+  }
+  .btn-primary {
+    background:#bfa078;
+    color:white;
+    border: 1px solid #bfa078;
+  }
+
+}
+
+.displayInfo {
+    display: flex;
+
+}
+
+.noDisplayInfo {
+  display: none;
+  @media screen and(min-width: $breakpoint-tablet) {
+    display: flex;
+  }
+}
+
+.title-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.bi-info-circle {
+  display: block;
+  @media screen and(min-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.more {
+  justify-content: space-evenly;
+  @media screen and(min-width: $breakpoint-tablet) {
+    display: none !important;
+  }
+}
+
+.card-body-cascade {
+  overflow: hidden;
+}
+
+.animate {
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+
+.showDetail {
+    display: flex;
+    flex-direction: column;
+}
+
+.hideInfo {
+  display:none;
+  @media screen and(min-width: $breakpoint-tablet) {
+    display: flex;
+  }
+}

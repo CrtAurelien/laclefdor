@@ -1,0 +1,21 @@
+.mentions-legales{
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto 50px auto;
+  color: white;
+  h1{
+    margin-bottom: 50px;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+  }
+  h3{
+    color: #b49571;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  .row{
+    flex-direction: column;
+  }
+}

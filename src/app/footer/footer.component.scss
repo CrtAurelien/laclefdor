@@ -1,0 +1,55 @@
+@import "src/variables";
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  margin: 150px 0 0 0;
+  align-items: center;
+  @media screen and (max-width: $breakpoint-tablet) {
+    display: flex;
+    height: 100px;
+    padding: 0 0 15px 0;
+    align-items: flex-start;
+    margin: 0;
+  }
+  .copyright,.links,.logo-agency{
+    display: flex;
+    flex:1;
+  }
+  .copyright{
+    justify-content: flex-start;
+    color: white;
+    text-decoration: none;
+    font-family: $textFont;
+    font-size: 12px;
+    line-height: 13px;
+    @media screen and (max-width: $breakpoint-tablet) {
+      flex: 1 1 auto;
+    }
+    span{
+      font-size: 18px;
+      padding-right: 10px;
+    }
+  }
+  .links{
+    justify-content: center;
+    a{
+      color: white;
+      margin: 0 10px;
+      text-underline-offset: 5px;
+      font-family: $textFont;
+      text-decoration: underline;
+      font-size: 12px;
+    }
+  }
+  .logo-agency{
+    justify-content: flex-end;
+    @media screen and (max-width: $breakpoint-tablet) {
+
+      image{
+        width: 50%;
+      }
+    }
+  }
+}

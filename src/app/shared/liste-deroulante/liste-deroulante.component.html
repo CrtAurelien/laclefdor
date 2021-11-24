@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+  <mat-select [formControl]="nombrePersonne" placeholder="Nombre de personnes">
+    <mat-option>Choisir le nombre de personnes</mat-option>
+    <mat-option *ngFor="let capacityItem of capacityPossible" [value]="capacityItem.capacity">
+      {{capacityItem.value}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
