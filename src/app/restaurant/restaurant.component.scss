@@ -80,6 +80,11 @@
     padding-bottom: 50px;
     flex-wrap: nowrap;
     align-items: center;
+    .homemade{
+      width: 90px;
+      float: right;
+      position: absolute;
+    }
     .img-macarons{
       width: 400px;
     }
@@ -97,6 +102,7 @@
     .subtitle {
       color: white;
       letter-spacing: inherit;
+      display: inline-block;
     }
 
     .text {
