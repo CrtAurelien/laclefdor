@@ -44,23 +44,6 @@
                   entrer un numéro de téléphone valide</small>
                 <small class="form-text text-muted">Nous ne partagerons pas votre numéro de téléphone</small>
               </div>
-              <div
-                class="form-check petitDej {{hasError && !identite.controls['petitDejeuner'].valid ? 'invalid' : ''}}">
-                <input type="checkbox" [formControl]="identite.controls['petitDejeuner']" class="form-check-input">
-                <label class="form-check-label">Je craque pour le petit déjeuner (6€/personne,
-                  soit {{6 * nombrePersonneReservation}}€ pour votre réservation)</label>
-              </div>
-              <div *ngIf="showInputPetitDej"
-                   class="form-group {{hasError && !identite.controls['nombrePetitDejeuner'].valid ? 'invalid' : ''}}">
-                <label for="tel">Pour combien de jour souhaitez vous avoir le petit déjeuner ? (comprend
-                  les {{nombrePersonneReservation}} personnes) </label>
-                <input type="number" value="1" min="1" [max]="this.nombreNuit.length- 1" class="form-control"
-                       [formControl]="identite.controls['nombrePetitDejeuner']" id="nbDej"
-                       (blur)="controlNombrePetitDejeuner($event)"
-                       placeholder="Entrez le nombre de petit dejeuner désiré">
-                <small *ngIf="showMsgErreurNombrePetitDej" class="form-text text-danger">Vous ne pouvez pas demander un
-                  nombre de petit dejeuner superieur au nombre de nuit.</small>
-              </div>
             </div>
             <div class="tarif">
               <span class="title-tarif">Récapitulatif de votre réservation</span>
@@ -68,11 +51,6 @@
                 <div class="tarif-ligne d-flex justify-content-between align-items-center">
                   <span><b>Tarif de base :</b></span>
                   <span class="value">50€ pour 1 ou 2 personnes par nuit, puis 6€ par personne supplémentaire</span>
-                </div>
-                <div *ngIf="identite.controls['petitDejeuner'].value"
-                     class="tarif-ligne d-flex justify-content-between align-items-center">
-                  <span><b>Petit-déjeuner :</b></span>
-                  <span>6 euros par personne, soit {{tarifTotalPetitDej}}€ pour votre réservation</span>
                 </div>
                 <div class="tarif-ligne d-flex justify-content-between align-items-center">
                   <span><b>Taxe de séjour :</b></span>
@@ -118,11 +96,6 @@
                   <div class="tarif-ligne d-flex justify-content-between align-items-center">
                     <span><b>Nombre de personne :</b></span>
                     <span>{{nombrePersonneReservation}} personne(s)</span>
-                  </div>
-                  <div *ngIf="identite.controls['petitDejeuner'].value"
-                       class="tarif-ligne d-flex justify-content-between align-items-center">
-                    <span><b>Petit-déjeuner :</b></span>
-                    <span>6 euros par personne, soit {{tarifTotalPetitDej}}€</span>
                   </div>
                   <div class="tarif-ligne d-flex justify-content-between align-items-center">
                     <span><b>Taxe de séjour :</b></span>

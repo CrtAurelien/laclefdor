@@ -29,18 +29,11 @@ export class FormulaireReservationComponent implements OnInit {
   dateReservations;
   nombrePersonneReservation;
   tarifTotal;
-  tarifPetitDejeuner = 6;
-  tarifNuit = 50;
+  tarifNuit = 56;
   nombreNuit;
-  ngUnsubscribe = new Subject();
-  tarifTotalPetitDej;
   showSuccess;
-  showCancel;
-  showError;
   showPaypalBtn = false;
   taxeDeSejour = 0.70;
-  showMsgErreurNombrePetitDej = false;
-  showInputPetitDej = false;
   public payPalConfig: IPayPalConfig;
 
   constructor(private reservationService: ReservationsService, private router: Router, private datePipe: DatePipe, private formatageService: FormatageService) { }
@@ -54,34 +47,12 @@ export class FormulaireReservationComponent implements OnInit {
       this.router.navigate(['/hebergement']);
     } else {
       this.calculerTarif();
-      this.identite.controls['petitDejeuner'].valueChanges.pipe(
-        tap(data => {
-          if(!this.showInputPetitDej) {
-            this.showInputPetitDej = true;
-            this.identite.controls["nombrePetitDejeuner"].setValidators(Validators.required);
-            this.identite.controls["nombrePetitDejeuner"].setValue(1);
-            this.calculerTarif();
-          } else {
-            this.showInputPetitDej = false;
-            this.identite.controls["nombrePetitDejeuner"].setValue('');
-            this.identite.controls["nombrePetitDejeuner"].setValidators(null);
-            this.calculerTarif();
-          }
-        }), takeUntil(this.ngUnsubscribe)
-      ).subscribe();
-      this.identite.controls["nombrePetitDejeuner"].valueChanges.pipe(
-        tap(data => {
-          this.reservationService.nombrePetitDejVoulu = data;
-          this.calculerTarif();
-        }), takeUntil(this.ngUnsubscribe)
-      ).subscribe();
     }
   }
 
   reserverChambre() {
     this.hasError = false;
     if(this.identite.valid) {
-      this.reservationService.nombrePetitDejVoulu =  this.identite.controls["nombrePetitDejeuner"].value;
       this.reservationService.tarufTotalReservation = this.tarifTotal;
       this.initConfig();
       this.showPaypalBtn = true;
@@ -102,14 +73,10 @@ export class FormulaireReservationComponent implements OnInit {
     const tarifTotalNuit = tarifNuitPourNombrePersonne * (this.nombreNuit.length - 1)
     const taxeSejourTotalPersonne = this.taxeDeSejour * this.nombrePersonneReservation;
     const taxeSejourTotal = taxeSejourTotalPersonne * (this.nombreNuit.length- 1)
-    if(this.identite.controls['petitDejeuner'].value) {
-      const nombrePetitDejeunerTarif = this.tarifPetitDejeuner * this.nombrePersonneReservation
-       this.tarifTotalPetitDej = nombrePetitDejeunerTarif *  this.identite.controls["nombrePetitDejeuner"].value
-      this.tarifTotal = tarifTotalNuit + this.tarifTotalPetitDej + taxeSejourTotal;
-    } else {
+
       this.tarifTotal = tarifTotalNuit + taxeSejourTotal;
 
-    }
+
     this.tarifTotal = this.formatageService.retournerArrondiNSignificatif(this.tarifTotal);
   }
 
@@ -182,13 +149,5 @@ export class FormulaireReservationComponent implements OnInit {
   }
 
 
-
-  controlNombrePetitDejeuner(e) {
-    this.showMsgErreurNombrePetitDej = false;
-    if( this.identite.controls["nombrePetitDejeuner"].value > (this.nombreNuit.length - 1)) {
-      this.identite.controls["nombrePetitDejeuner"].setValue(1);
-      this.showMsgErreurNombrePetitDej = true;
-    }
-  }
 
 }
