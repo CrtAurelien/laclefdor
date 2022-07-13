@@ -7,6 +7,21 @@
   }
 }
 
+.horaire {
+  span, ul, li {
+    color:white;
+    font-size:12px;
+    font-family: $textFont;
+  }
+  span {
+    text-decoration: underline;
+  }
+}
+
+.restau {
+  margin-left:40px;
+}
+
 .row {
   @media screen and(min-width: $breakpoint-big-tablet) {
     flex-wrap: nowrap;
@@ -61,7 +76,7 @@
       text-align: left;
     }
     @media screen and(min-width: $breakpoint-tablet) {
-      font-size: 15vw;
+      font-size: 13vw;
     }
     @media screen and(min-width: $breakpoint-large-desktop) {
       font-size: 15vw;

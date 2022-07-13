@@ -8,9 +8,32 @@
       <h2 class="title title-desktop">Bienvenue</h2>
       <p class="text ml-auto">Situés sur le bord de Loire à <b>Bréhémont</b>, nous vous proposons une <b>cuisine créative et traditionnelle française</b> incluant des
         spécialités régionales <b>sur place</b> et <b>à emporter</b> ainsi que des <b>chambres d’hôtes</b> afin de découvrir la région.</p>
+      <div class="d-flex horaire text">
+        <div>
+          <span>Horaires d'ouvertures de l'établissement: </span>
+          <ul>
+            <li>Ouvert du lundi au dimanche 8h00 - 22h30</li>
+            <li>Les soirs de concerts: fermeture à 23h30</li>
+            <li>Les lendemains de concerts: Ouverture à 9h00</li>
+            <li><b>Fermé le mercredi</b></li>
+          </ul>
+        </div>
+        <div class="restau">
+          <span>Le restaurant est ouvert:</span>
+          <ul>
+            <li>Le midi de 12h00 à 14h30 avec/sans réservation</li>
+            <li>Le soir de 19h à 22h <b>uniquement sur réservation</b></li>
+            <li>Les soirs de concert le restaurant est fermé</li>
+          </ul>
+        </div>
+      </div>
+
+
+
       <div class="d-flex align-items-center wrapper-btn animate__animated  animate__zoomIn">
-        <a class="btn btn-home-left" routerLink="/hebergement">Réserver en ligne</a>
-        <a class="btn btn-home-right" routerLink="/restaurant">Découvrir</a>
+        <a class="btn btn-home-left" routerLink="/hebergement" *ngId="featureResaIsOn">Réserver en ligne</a>
+        <a class="btn btn-home-left" routerLink="/hebergement" *ngIf="!featureResaIsOn">Voir nos chambres</a>
+        <a class="btn btn-home-right" routerLink="/restaurant">Restaurant</a>
       </div>
     </div>
   </div>
