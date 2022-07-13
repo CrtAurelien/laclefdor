@@ -46,7 +46,8 @@
         <span class="person-number">pour {{chambre.capacity}} personnes</span>
       </div>
       <div class="btn">
-        <button type="button" class="btn btn-primary" (click)="openModal(template)">Réserver</button>
+        <button *ngIf="featureReservationIsOn" type="button" class="btn btn-primary" (click)="openModal(template)">Réserver</button>
+        <span *ngIf="!featureReservationIsOn">Veuillez nous contacter pour réserver</span>
       </div>
     </div>
 

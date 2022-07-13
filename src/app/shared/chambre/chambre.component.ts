@@ -6,6 +6,7 @@ import {subscribeOn, takeUntil, tap} from "rxjs/operators";
 import {Subject} from "rxjs";
 import {Router} from "@angular/router";
 import {DatePipe} from "@angular/common";
+import {FeaturesService} from "../services/features.service";
 
 @Component({
   selector: 'app-chambre',
@@ -33,11 +34,14 @@ export class ChambreComponent implements OnInit {
   @Input()
   typeTemplate: string;
   displayInfo = false;
+  featureReservationIsOn = false;
 
-  constructor(private modalService: BsModalService, private datePipe: DatePipe, private reservationService: ReservationsService, private router: Router) {
+  constructor(private modalService: BsModalService, private featureService: FeaturesService,
+              private datePipe: DatePipe, private reservationService: ReservationsService, private router: Router) {
   }
 
   ngOnInit(): void {
+    this.featureReservationIsOn = this.featureService.featureIsOn('reservation');
     // On s'abonne au chamngement sur les dates selectionnées par le user
     this.reservationService.listeDateSelectionneeSubject.pipe(
       tap((data: any) => {
@@ -51,7 +55,7 @@ export class ChambreComponent implements OnInit {
         // On applique le filtre sur le nombre de personne
         this.appliquerFiiltreNombreDePersonne(data);
       }), takeUntil(this.ngUnsubscribe)
-    ).subscribe()
+    ).subscribe();
   }
 
   // Methode permettant d'ouvrir la modal
