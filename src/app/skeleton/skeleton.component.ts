@@ -22,9 +22,9 @@ export class SkeletonComponent implements OnInit, AfterContentInit {
   }
 
   ngOnInit(): void {
-    this.featureService.getAllFeatures().subscribe(data => {
+   /** this.featureService.getAllFeatures().subscribe(data => {
       this.featureService.listeFeatures = data;
-    });
+    });*/
   }
   ngAfterContentInit(): void{
     this.backgroundService.getNomClasseSubject().pipe(

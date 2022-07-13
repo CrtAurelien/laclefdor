@@ -31,7 +31,7 @@
 
 
       <div class="d-flex align-items-center wrapper-btn animate__animated  animate__zoomIn">
-        <a class="btn btn-home-left" routerLink="/hebergement" *ngId="featureResaIsOn">Réserver en ligne</a>
+        <a class="btn btn-home-left" routerLink="/hebergement" *ngIf="featureResaIsOn">Réserver en ligne</a>
         <a class="btn btn-home-left" routerLink="/hebergement" *ngIf="!featureResaIsOn">Voir nos chambres</a>
         <a class="btn btn-home-right" routerLink="/restaurant">Restaurant</a>
       </div>

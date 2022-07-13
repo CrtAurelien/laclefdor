@@ -41,7 +41,7 @@ export class ChambreComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.featureReservationIsOn = this.featureService.featureIsOn('reservation');
+    //this.featureReservationIsOn = this.featureService.featureIsOn('reservation');
     // On s'abonne au chamngement sur les dates selectionnées par le user
     this.reservationService.listeDateSelectionneeSubject.pipe(
       tap((data: any) => {
