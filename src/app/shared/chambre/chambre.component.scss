@@ -13,6 +13,17 @@
     width: 400px;
   }
 }
+
+.btn {
+  a {
+    text-decoration: none !important;
+    color:white;
+    &:hover {
+      color:#bfa078;
+
+    }
+  }
+}
 .card-img-top {
   width: 100%;
   border-radius: 1.25rem;

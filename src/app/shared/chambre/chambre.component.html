@@ -45,9 +45,14 @@
         <span class="rate-number">{{chambre.price}}€</span>
         <span class="person-number">pour {{chambre.capacity}} personnes</span>
       </div>
-      <div class="btn">
+      <div class="btn d-flex flex-column">
         <button *ngIf="featureReservationIsOn" type="button" class="btn btn-primary" (click)="openModal(template)">Réserver</button>
         <span *ngIf="!featureReservationIsOn">Veuillez nous contacter pour réserver</span>
+        <button *ngIf="!featureReservationIsOn" type="button" class="btn btn-primary">
+          <a href="tel:0247967026">
+          02.47.96.70.26
+          </a>
+        </button>
       </div>
     </div>
 
