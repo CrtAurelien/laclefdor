@@ -25,7 +25,9 @@ export class FeaturesService {
 
 
   featureIsOn(nom: string): boolean {
-    return this.listeFeatures.find(elm => elm.nom === nom).etat;
+    if(this.listeFeatures.length > 0) {
+      return this.listeFeatures.find(elm => elm.nom === nom).etat;
+    }
   }
 
 
