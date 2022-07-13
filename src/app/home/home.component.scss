@@ -8,6 +8,11 @@
 }
 
 .horaire {
+  flex-direction: column;
+
+  @media screen and(min-width: $breakpoint-tablet) {
+    flex-direction: row;
+  }
   span, ul, li {
     color:white;
     font-size:12px;
@@ -19,7 +24,10 @@
 }
 
 .restau {
-  margin-left:40px;
+  @media screen and(min-width: $breakpoint-tablet) {
+    margin-left:40px;
+  }
+
 }
 
 .row {
