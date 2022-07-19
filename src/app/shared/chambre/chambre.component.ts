@@ -16,7 +16,7 @@ import {FeaturesService} from "../services/features.service";
 export class ChambreComponent implements OnInit {
   // Correspond à la chambre a afficher / traiter
   @Input()
-  chambre: Chambre
+  chambre: Chambre;
   // Modal
   modalRef?: BsModalRef;
   message?: string;
