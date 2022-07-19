@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Reservation} from "../../core/models/reservation";
-import {Observable, of, Subject} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {Chambre} from "../../core/models/chambre";
-import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {DatePipe} from "@angular/common";
 
 @Injectable({
@@ -35,7 +35,7 @@ export class ReservationsService {
   }
 
   setNombrePersonneVoulu(nombre: any) {
-    this. nombrePersonneVoulu = nombre;
+    this.nombrePersonneVoulu = nombre;
     this.nombrePersonneVOuluSubject.next(this.nombrePersonneVoulu);
   }
 
@@ -51,8 +51,7 @@ export class ReservationsService {
   // On retourne les reservation de la chambre passée en parametre
   getReservationsForARoom(room: Chambre) {
     // On filtre notre liste de reservation a partir de l'identifiant de la chambre passée en parametre
-    const listeReservations = this.listeReservation.filter(reservation => reservation.idChamber === room.id);
-    return listeReservations;
+    return this.listeReservation.filter(reservation => reservation.idChamber === room.id);
   }
 
    getDates (startDate, endDate) {

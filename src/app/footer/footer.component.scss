@@ -45,6 +45,12 @@
   }
   .logo-agency{
     justify-content: flex-end;
+    gap: 16px;
+    align-items: center;
+    span{
+      color: white;
+      font-size: 12px;
+    }
     @media screen and (max-width: $breakpoint-tablet) {
 
       image{

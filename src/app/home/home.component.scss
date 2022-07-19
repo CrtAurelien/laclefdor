@@ -15,11 +15,14 @@
   }
   span, ul, li {
     color:white;
-    font-size:12px;
+    font-size:14px;
     font-family: $textFont;
   }
   span {
-    text-decoration: underline;
+    display: block;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
   }
 }
 
