@@ -1,10 +1,15 @@
 @import "src/variables";
 
-.navbar, .navbar-nav{
-  padding: 10px 15px;
+.navbar{
+  padding: 30px 50px;
   margin: 0 -15px;
+  line-height: 50px;
+  ul{
+    gap: 20px;
+  }
   li{
-    margin: 0 15px;
+    font-size: 19px;
+    margin: 0;
   }
   .logo{
     max-width: 330px;
