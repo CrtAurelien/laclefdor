@@ -34,7 +34,7 @@
   @media screen and(min-width: $breakpoint-tablet) {
     margin-left:40px;
   }
-  @media screen and(min-width: $breakpoint-mobile) {
+  @media screen and(min-width: $breakpoint-mobile) and(max-width: $breakpoint-tablet) {
     margin-top: 20px;
   }
 }
