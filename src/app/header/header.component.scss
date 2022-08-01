@@ -1,51 +1,12 @@
 @import "src/variables";
 
+div#navbarSupportedContent{
+  justify-content: flex-end !important;
+}
 .navbar{
-  padding: 30px 35px;
+  padding: 30px 50px;
   margin: 0 -15px;
   line-height: 50px;
-  .show{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: grey;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    transition: .7s;
-  }
-  .collapse:not(.show){
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: grey;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    transition: .7s;
-  }
-  .navbar-collapse{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: grey;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    transition: .7s;
-  }
   ul{
     gap: 20px;
   }

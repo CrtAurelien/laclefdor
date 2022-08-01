@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {BackgroundSwitchService} from "../shared/services/background-switch.service";
-import {FeaturesService} from "../shared/services/features.service";
+import {BackgroundSwitchService} from '../shared/services/background-switch.service';
+import {FeaturesService} from '../shared/services/features.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,8 @@ import {FeaturesService} from "../shared/services/features.service";
 })
 export class HomeComponent implements OnInit {
   featureResaIsOn = false;
-  className = "blue"
+  className = 'blue';
+
 
   constructor(private backgroundService: BackgroundSwitchService, private featureService: FeaturesService) { }
 
