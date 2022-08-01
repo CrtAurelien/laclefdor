@@ -45,7 +45,7 @@
   color: #4e2228;
 }
 .card-text{
-  margin: 30px 25px;
+  margin: 30px 25px 10px 25px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -239,7 +239,8 @@ li.card-details {
 }
 
 .more {
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 10px;
   @media screen and(min-width: $breakpoint-tablet) {
     display: none !important;
   }

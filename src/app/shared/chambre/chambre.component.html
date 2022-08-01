@@ -13,11 +13,11 @@
 
       <div class="card-body card-body-cascade">
         <h3 class="pb-2 pt-1 title-card">{{chambre.name}}</h3>
-        <div class="d-flex align-items-center more ">
-          <span  >Informations détaillées</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#302224" class="bi bi-plus-circle-fill animate" viewBox="0 0 16 16" (click)="showDetail()">
+        <div class="d-flex align-items-center more">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#302224" class="bi bi-plus-circle-fill animate" viewBox="0 0 16 16" (click)="showDetail()">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
           </svg>
+          <span>Informations détaillées</span>
         </div>
         <ul class="card-text   {{displayInfo ? 'showDetail' : 'hideInfo'}}">
             <li class="card-details animate__fadeInDown animate__animated">

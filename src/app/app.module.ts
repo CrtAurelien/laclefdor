@@ -32,6 +32,7 @@ import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.co
 import {NgsRevealModule} from 'ngx-scrollreveal';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { ErreurServeurComponent } from './erreur-serveur/erreur-serveur.component';
+import { CarteRestaurantComponent } from './carte-restaurant/carte-restaurant.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ErreurServeurComponent } from './erreur-serveur/erreur-serveur.componen
     EchecPaypalComponent,
     MentionsLegalesComponent,
     LoaderComponent,
-    ErreurServeurComponent
+    ErreurServeurComponent,
+    CarteRestaurantComponent
   ],
   imports: [
     BrowserModule,
